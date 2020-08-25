@@ -11,7 +11,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Xml.Linq;
 
 namespace Radiko
@@ -89,7 +88,7 @@ namespace Radiko
             var SaveDialogResult = SaveDialog.ShowDialog();
             if (SaveDialogResult == true)
             {
-                var FFmpegPath = GetCurrentAppDir() + "\\ffmpeg.exe";
+                var FFmpegPath = GetCurrentAppDir() + "\\ffmpeg\\ffmpeg.exe";
                 var process = new Process();
                 process.StartInfo.FileName = FFmpegPath;
                 process.StartInfo.WorkingDirectory = GetCurrentAppDir();
@@ -122,10 +121,9 @@ namespace Radiko
             var SaveDialogResult = SaveDialog.ShowDialog();
             if (SaveDialogResult == true)
             {
-                var FFmpegPath = GetCurrentAppDir() + "\\ffmpeg.exe";
+                var FFmpegPath = GetCurrentAppDir() + "\\ffmpeg\\ffmpeg.exe";
                 var process = new Process();
                 process.StartInfo.FileName = FFmpegPath;
-                process.StartInfo.WorkingDirectory = GetCurrentAppDir();
                 process.StartInfo.Arguments = "-y -headers \"X-Radiko-AuthToken: " + AuthToken + "\" -i \"" + StreamUrl + "?station_id=" + StationId + "&ft=" + (string)info["ft"] + "&to=" + (string)info["to"] + "&l=15&lsid=" + UID3() + "&type=b\" \"" + SaveDialog.FileName + "\"";
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 process.Start();

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadikoDownloader", "Radiko\RadikoDownloader.csproj", "{FB1D405F-BC26-47D5-A136-139C8071912D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadikoDownloader", "RadikoDownloader\RadikoDownloader.csproj", "{FB1D405F-BC26-47D5-A136-139C8071912D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
