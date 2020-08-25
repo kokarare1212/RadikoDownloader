@@ -9,4 +9,4 @@
     
      steps:
        - checkout
-       - run: dotnet build
+       - run: msbuild RadikoDownloader.csproj /p:Configuration=Release
