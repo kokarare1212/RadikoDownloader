@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1160beb284874f03bd7a3898457c2f68)](https://www.codacy.com/manual/kokarare1212/RadikoDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kokarare1212/RadikoDownloader&amp;utm_campaign=Badge_Grade)
 # RadikoDownloader  
 ## Feauture  
 Radikoの番組を１クリックでダウンロードすることができるアプリです  
