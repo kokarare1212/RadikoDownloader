@@ -1,4 +1,4 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1160beb284874f03bd7a3898457c2f68)](https://www.codacy.com/manual/kokarare1212/RadikoDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kokarare1212/RadikoDownloader&amp;utm_campaign=Badge_Grade)[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1160beb284874f03bd7a3898457c2f68)](https://www.codacy.com/manual/kokarare1212/RadikoDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kokarare1212/RadikoDownloader&amp;utm_campaign=Badge_Grade)[![Coverage Status](https://coveralls.io/repos/github/kokarare1212/RadikoDownloader/badge.svg?branch=master)](https://coveralls.io/github/kokarare1212/RadikoDownloader?branch=master)[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 # RadikoDownloader  
 ## Feauture  
 Radikoの番組を１クリックでダウンロードすることができるアプリです  
