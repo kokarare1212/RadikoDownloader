@@ -1,5 +1,5 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1160beb284874f03bd7a3898457c2f68)](https://www.codacy.com/manual/kokarare1212/RadikoDownloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kokarare1212/RadikoDownloader&amp;utm_campaign=Badge_Grade)
-![CI](https://github.com/kokarare1212/RadikoDownloader/workflows/CI/badge.svg)(https://circleci.com/gh/kokarare1212/RadikoDownloader)
+![CI](https://github.com/kokarare1212/RadikoDownloader/workflows/CI/badge.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 # RadikoDownloader  
 ## Feauture  
