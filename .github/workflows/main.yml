@@ -9,9 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup
-        uses: actions/setup-dotnet@v1.6.0
-        with:
-          dotnet-version: 4.7.2
-      - name: Build
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.1
+      - name: Build Project
         run: msbuild RadikoDownloader\RadikoDownloader.csproj /p:Configuration=Release
