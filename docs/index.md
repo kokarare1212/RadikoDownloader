@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  
 ## RadikoDownloaderへようこそ！
 You can use the [editor on GitHub](https://github.com/kokarare1212/RadikoDownloader/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+![Image 1](./img/1.png)
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
