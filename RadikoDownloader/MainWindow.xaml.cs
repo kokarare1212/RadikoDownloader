@@ -76,7 +76,7 @@ namespace Radiko
             }
         }
 
-        private async void DownloadLiveProgram(string StationId)
+        private void DownloadLiveProgram(string StationId)
         {
             var AuthToken = GetAuthToken(StationId);
             var StreamUrl = GetStreamUrl(StationId, true);
@@ -108,7 +108,7 @@ namespace Radiko
                 }));
             }
         }
-        private async void DownloadProgram(string StationId, string ft)
+        private void DownloadProgram(string StationId, string ft)
         {
             var info = GetProgram(StationId, ft);
             var AuthToken = GetAuthToken(StationId);
@@ -128,18 +128,18 @@ namespace Radiko
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 process.Start();
                 this.Dispatcher.Invoke((Action)(() =>
-                {   
+                {
                     downloadingProgram.Add(new Program
                     {
                         id = (string)info["id"],
-                    title = (string)info["title"],
+                        title = (string)info["title"],
                         pfm = (string)info["pfm"],
                         status = "ダウンロード中",
                     });
                     downloadGrid.ItemsSource = downloadingProgram;
                 }));
                 process.WaitForExit();
-                if(process.ExitCode.Equals(0))
+                if (process.ExitCode.Equals(0))
                 {
                     this.Dispatcher.Invoke((Action)(() =>
                     {
@@ -154,7 +154,8 @@ namespace Radiko
                         downloadGrid.ItemsSource = downloadingProgram;
                         downloadGrid.Items.Refresh();
                     }));
-                } else
+                }
+                else
                 {
                     this.Dispatcher.Invoke((Action)(() =>
                     {
@@ -360,9 +361,6 @@ namespace Radiko
                 case "id":
                     e.Column.Visibility = Visibility.Hidden;
                     break;
-                case "done":
-                    e.Column.Visibility = Visibility.Hidden;
-                    break;
                 case "title":
                     e.Column.Header = "タイトル";
                     e.Column.DisplayIndex = 0;
@@ -375,13 +373,10 @@ namespace Radiko
                     e.Column.Header = "状態";
                     e.Column.DisplayIndex = 2;
                     break;
-                default:
-                    throw new InvalidOperationException();
             }
         }
     }
     public class Program{
-        public string date { get; set; }
         public string id { get; set; }
         public string title { get; set; }
         public string pfm { get; set; }
