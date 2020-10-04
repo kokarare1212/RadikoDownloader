@@ -345,6 +345,8 @@ namespace Radiko
                     e.Column.Header = "状態";
                     e.Column.DisplayIndex = 2;
                     break;
+                default:
+                    break;
             }
         }
     }
