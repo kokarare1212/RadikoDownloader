@@ -92,7 +92,7 @@ namespace Radiko
                 var process = new Process();
                 process.StartInfo.FileName = FFmpegPath;
                 process.StartInfo.WorkingDirectory = GetCurrentAppDir();
-                process.StartInfo.Arguments = "-y -headers \"X-Radiko-AuthToken: " + AuthToken + "\" -i \"" + StreamUrl + "?station_id=" + StationId + "&l=15&lsid=" + UID3() + "&type=b\" \"" + SaveDialog.FileName + "\"";
+                process.StartInfo.Arguments = "-y -headers \"X-Radiko-AuthToken: " + AuthToken + "\" -i \"" + StreamUrl + "?station_id=" + StationId + "&l=15&lsid=&type=b\" \"" + SaveDialog.FileName + "\"";
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 process.Start();
                 this.Dispatcher.Invoke((Action)(() =>
@@ -124,7 +124,7 @@ namespace Radiko
                 var FFmpegPath = GetCurrentAppDir() + "\\ffmpeg\\ffmpeg.exe";
                 var process = new Process();
                 process.StartInfo.FileName = FFmpegPath;
-                process.StartInfo.Arguments = "-y -headers \"X-Radiko-AuthToken: " + AuthToken + "\" -i \"" + StreamUrl + "?station_id=" + StationId + "&ft=" + (string)info["ft"] + "&to=" + (string)info["to"] + "&l=15&lsid=" + UID3() + "&type=b\" \"" + SaveDialog.FileName + "\"";
+                process.StartInfo.Arguments = "-y -headers \"X-Radiko-AuthToken: " + AuthToken + "\" -i \"" + StreamUrl + "?station_id=" + StationId + "&ft=" + (string)info["ft"] + "&to=" + (string)info["to"] + "&l=15&lsid=&type=b\" \"" + SaveDialog.FileName + "\"";
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 process.Start();
                 this.Dispatcher.Invoke((Action)(() =>
@@ -173,16 +173,6 @@ namespace Radiko
                 }
             }
         }
-
-        private string UID3()
-        {
-            var md5Hash = MD5.Create();
-            var TimeStampTmp = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            var TimeStamp = Math.Floor(TimeStampTmp.TotalSeconds);
-            var randVal = Math.Floor(GetRandom() * 1000000000);
-            return GetMd5Hash(md5Hash, (randVal + TimeStamp).ToString());
-        }
-
         private Hashtable GetProgram(string StationId, string ft)
         {
             var Client = new HttpClient();
@@ -228,24 +218,6 @@ namespace Radiko
                 }
             }
             return ProgramInformation;
-        }
-
-        private double GetRandom()
-        {
-            var rand = new Random();
-            var choose = rand.Next(0, int.MaxValue);
-            return choose / int.MaxValue;
-        }
-
-        private string GetMd5Hash(MD5 md5Hash, string input)
-        {
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
         }
 
         private string GetStreamUrl(string StationId, bool isLive)
